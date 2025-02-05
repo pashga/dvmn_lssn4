@@ -2,11 +2,11 @@ from PIL import Image
 
 image = Image.open("monro.jpg")
 red, green, blue = image.split()
-coordinates_red = (0, 0, image.width - 50, image.height)
+coordinates_red = (50, 0, image.width, image.height)
 image_red_crop = red.crop(coordinates_red)
 image_red = red.crop((25, 0, image.width - 25, image.height))
 red = Image.blend(image_red_crop, image_red,  0.4)
-coordinates_blue = (50, 0, image.width, image.height)
+coordinates_blue = (0, 0, image.width - 50, image.height)
 image_blue_crop = blue.crop(coordinates_blue)
 image_blue = blue.crop((25, 0, image.width - 25, image.height))
 blue = Image.blend(image_blue, image_blue_crop,  0.4)
